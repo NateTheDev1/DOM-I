@@ -99,3 +99,15 @@ bottomContent[2].childNodes[1].textContent =
 
 bottomContent[2].childNodes[3].textContent =
   siteContent["main-content"]["vision-content"];
+
+// Contact
+let contact = document.querySelector(".contact").children;
+
+contact[0].textContent = siteContent["contact"]["contact-h4"];
+contact[1].textContent = siteContent["contact"]["address"];
+contact[2].textContent = siteContent["contact"]["phone"];
+contact[3].textContent = siteContent["contact"]["email"];
+
+// Footer
+let footer = document.querySelector("footer").children;
+footer[0].textContent = siteContent["footer"]["copyright"];
