@@ -46,10 +46,13 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute("src", siteContent["nav"]["img-src"]);
 
+// Nav
 let nav = document.getElementsByTagName("nav")[0].children;
 for (i = 0; i < nav.length; i++) {
   nav[i].textContent = siteContent["nav"][`nav-item-${i + 1}`];
 }
+
+// CTA
 
 let codeImg = document.getElementById("cta-img");
 codeImg.setAttribute("src", siteContent["cta"]["img-src"]);
@@ -57,3 +60,42 @@ codeImg.setAttribute("src", siteContent["cta"]["img-src"]);
 let ctaText = document.querySelector(".cta-text").children;
 ctaText[0].textContent = siteContent["cta"]["h1"];
 ctaText[1].textContent = siteContent["cta"]["button"];
+
+// Top Content
+let topContent = document.querySelector(".top-content").children;
+
+topContent[0].childNodes[1].textContent =
+  siteContent["main-content"]["features-h4"];
+
+topContent[0].childNodes[3].textContent =
+  siteContent["main-content"]["features-content"];
+
+topContent[1].childNodes[1].textContent =
+  siteContent["main-content"]["about-h4"];
+
+topContent[1].childNodes[3].textContent =
+  siteContent["main-content"]["about-content"];
+
+// Middle Img
+let midImg = document.getElementById("middle-img");
+midImg.setAttribute("src", siteContent["main-content"]["middle-img-src"]);
+
+// Bottom Content
+let bottomContent = document.querySelector(".bottom-content").children;
+bottomContent[0].childNodes[1].textContent =
+  siteContent["main-content"]["services-h4"];
+
+bottomContent[0].childNodes[3].textContent =
+  siteContent["main-content"]["services-content"];
+
+bottomContent[1].childNodes[1].textContent =
+  siteContent["main-content"]["product-h4"];
+
+bottomContent[1].childNodes[3].textContent =
+  siteContent["main-content"]["product-content"];
+
+bottomContent[2].childNodes[1].textContent =
+  siteContent["main-content"]["vision-h4"];
+
+bottomContent[2].childNodes[3].textContent =
+  siteContent["main-content"]["vision-content"];
