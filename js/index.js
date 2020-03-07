@@ -47,10 +47,25 @@ let logo = document.getElementById("logo-img");
 logo.setAttribute("src", siteContent["nav"]["img-src"]);
 
 // Nav
+
 let nav = document.getElementsByTagName("nav")[0].children;
 for (i = 0; i < nav.length; i++) {
   nav[i].textContent = siteContent["nav"][`nav-item-${i + 1}`];
+  nav[i].style.color = "green";
 }
+
+let navContainer = document.querySelector("nav");
+const child1 = document.createElement("a");
+const child1_text = document.createTextNode("Pricing");
+child1.appendChild(child1_text);
+child1.style.color = "green";
+navContainer.appendChild(child1);
+
+const child2 = document.createElement("a");
+const child2_text = document.createTextNode("Lambda School");
+child2.appendChild(child2_text);
+child2.style.color = "green";
+navContainer.prepend(child2);
 
 // CTA
 
