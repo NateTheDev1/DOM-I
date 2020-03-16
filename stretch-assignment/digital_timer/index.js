@@ -18,6 +18,37 @@ const logData = () => {
   console.log(msTens);
 };
 
+const controls = document.querySelector(".controls").children;
+// [0] btn-start [1] btn-clear
+
+const btn_start = controls[0];
+const btn_clear = controls[1];
+let started = false;
+
+// startTimer();
+// console.log(timerDOM);
+
+btn_start.addEventListener("click", e => {
+  if (started === false) {
+    startTimer();
+    started = true;
+  } else {
+    alert("There is a timer already going!");
+  }
+});
+
+btn_clear.addEventListener("click", e => {
+  msTens = 0;
+  msHundreds = 0;
+  secondOnes = 0;
+  secondTens = 0;
+  timerDOM[1].textContent = secondOnes;
+  timerDOM[4].textContent = msTens;
+  timerDOM[3].textContent = msHundreds;
+  timerDOM[0].textContent = secondTens;
+  location.reload();
+});
+
 //Timer function
 const startTimer = () => {
   if (secondTens === 1) {
@@ -75,10 +106,8 @@ const startTimer = () => {
       for (let i = 0; i < timerDOM.length; i++) {
         timerDOM[i].classList.add("redDigit");
       }
+      started = false;
       clearInterval(secondTensInt);
     }, 10000);
   }
 };
-
-startTimer();
-// console.log(timerDOM);
